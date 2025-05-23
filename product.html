@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title style="font-family: 'Poppins', sans-serif;">Greenden</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .click-animation {
+            transition: transform 0.2s ease;
+        }
+
+        .click-animation:active {
+            transform: scale(0.95);
+        }
+
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+        }
+
+        .social-icon:active {
+            transform: scale(0.9);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="bg-green-100 p-3 z-10 flex justify-between items-center sticky top-0 shadow-xl">
+        <img src="./Logo.png" alt="GREENDEN" class="w-20" onclick="location.href='./index.html'">
+        <div>
+            <div class="md:hidden">
+                <svg id="menuicon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </div>
+
+            <ul class="flex gap-5 hidden md:flex text-gray-600">
+                <li><a href="./index.html" class="hover:text-black hover:underline">Home</a></li>
+                <li><a href="./product.html" class="hover:text-black hover:underline">Products</a></li>
+                <li><a href="./contact.html" class="hover:text-black hover:underline">Contact</a></li>
+            </ul>
+        </div>
+
+
+    </nav>
+
+    <!--Side navbar-->
+    <section id="sidenav" class="bg-green-100 fixed z-20 top-0 transition-all duration-1000"
+        style="width: 50%;height: 100vh;right: -50%;">
+        <div class="text-right p-5">
+            <p id="closenav" class="inline cursor-pointer">X</p>
+        </div>
+        <ul class="flex flex-col gap-10 items-center  text-gray-600">
+            <li><a href="./index.html" class="hover:text-black hover:underline">Home</a></li>
+            <li><a href="./product.html" class="hover:text-black hover:underline">Products</a></li>
+            <li><a href="./contact.html" class="hover:text-black hover:underline">Contact</a></li>
+        </ul>
+    </section>
+
+    <section class="p-4 text-center">
+        <h1 class="text-3xl font-bold mt-5 text-center">Our Products</h1>
+        <input id="search" style="width: 80%;" placeholder="Search for a Product..." type="text"
+            class="p-2 m-3 border border-black">
+        <select id="category-filter" class="p-2 m-3 border border-black">
+            <option value="all">All</option>
+            <option value="indoor">Indoor</option>
+            <option value="outdoor">Outdoor</option>
+        </select>
+        <select id="price-filter" class="p-2 m-3 border border-black">
+            <option value="all">All</option>
+            <option value="under20">Under $20</option>
+            <option value="20-50">$20-$50</option>
+            <option value="over50">Over $50</option>
+        </select>
+        <div id="product-container" class="grid grid-cols-2 md:grid-cols-4 gap-5 col-span-2 mt-5">
+            <!-- Indoor Plants -->
+            <div class="text-center" data-category="indoor">
+                <img class="inline transform hover:-translate-y-2 hover:shadow-xl transition" src="./rose.jpg">
+                <h1>Rose Plant</h1>
+                <p class="text-gray-600 text-sm">Classic and Timeless</p>
+                <p>$25</p>
+            </div>
+            <div class="text-center" data-category="indoor">
+                <img class="inline transform hover:-translate-y-2 hover:shadow-xl transition" src="./lily.jpg">
+                <h1>Peace Lily</h1>
+                <p class="text-gray-600 text-sm">Spathiphyllum wallisii</p>
+                <p>$30</p>
+            </div>
+            <div class="text-center" data-category="indoor">
+                <img class="inline transform hover:-translate-y-2 hover:shadow-xl transition" src="./dracaena.jpg">
+                <h1>Dracaena</h1>
+                <p class="text-gray-600 text-sm">Dracaena spp</p>
+                <p>$35</p>
+            </div>
+            <div class="text-center" data-category="indoor">
+                <img class="inline transform hover:-translate-y-2 hover:shadow-xl transition" src="./Philodendron.jpg">
+                <h1>Philodendron</h1>
+                <p class="text-gray-600 text-sm">Philodendron spp</p>
+                <p>$28</p>
+            </div>
+
+            <!-- Outdoor Plants -->
+            <div class="text-center" data-category="outdoor">
+                <img class="inline transform hover:-translate-y-2 hover:shadow-xl transition" src="./Hydrangea.jpg">
+                <h1>Hydrangea</h1>
+                <p class="text-gray-600 text-sm">Hydrangea spp</p>
+                <p>$45</p>
+            </div>
+            <div class="text-center" data-category="outdoor">
+                <img class="inline transform hover:-translate-y-2 hover:shadow-xl transition" src="./Lantana.jpg">
+                <h1>Lantana</h1>
+                <p class="text-gray-600 text-sm">Lantana camara</p>
+                <p>$38</p>
+            </div>
+            <div class="text-center" data-category="outdoor">
+                <img class="inline transform hover:-translate-y-2 hover:shadow-xl transition" src="./Bougainvillea.jpg">
+                <h1>Bougainvillea</h1>
+                <p class="text-gray-600 text-sm">Bougainvillea glabra</p>
+                <p>$42</p>
+            </div>
+            <div class="text-center" data-category="outdoor">
+                <img class="inline transform hover:-translate-y-2 hover:shadow-xl transition" src="./Hibiscus.jpg">
+                <h1>Hibiscus</h1>
+                <p class="text-gray-600 text-sm">Hibiscus spp</p>
+                <p>$40</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!--Footer-->
+    <section class="bg-green-100 p-10">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Company Info -->
+            <div>
+                <h1 class="text-4xl font-bold mb-4">Greenden</h1>
+                <p class="mb-4">Your trusted source for beautiful, high-quality plants and exceptional customer service.
+                    Bringing nature's beauty into your home since 2021.</p>
+            </div>
+            <!-- Contact Info -->
+            <div>
+                <h2 class="text-xl font-semibold mb-4">Contact Us</h2>
+                <p class="mb-2 click-animation cursor-pointer"><i class="fas fa-phone"></i> +91 123-456-7890</p>
+                <p class="mb-2 click-animation cursor-pointer"><i class="fas fa-envelope"></i> info@greenden.com</p>
+            </div>
+            <!-- Social Media -->
+            <div>
+                <h2 class="text-xl font-semibold mb-4">Follow Us</h2>
+                <div class="flex gap-4">
+                    <a href="https://instagram.com/greenden" class="hover:text-green-600 social-icon"><i
+                            class="fab fa-instagram text-2xl"></i></a>
+                    <a href="https://twitter.com/greenden" class="hover:text-green-600 social-icon"><i
+                            class="fab fa-twitter text-2xl"></i></a>
+                    <a href="https://facebook.com/greenden" class="hover:text-green-600 social-icon"><i
+                            class="fab fa-facebook text-2xl"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <p>&copy; 2025 Greenden.com - All rights reserved</p>
+        </div>
+    </section>
+</body>
+<script>
+    // Mobile Navigation
+    document.getElementById('menuicon').addEventListener('click', () => {
+        document.getElementById('sidenav').style.right = '0'
+    })
+    document.getElementById('closenav').addEventListener('click', () => {
+        document.getElementById('sidenav').style.right = '-50%'
+    })
+
+    // Product Filtering
+    const searchInput = document.getElementById('search');
+    const categoryFilter = document.getElementById('category-filter');
+    const priceFilter = document.getElementById('price-filter');
+    const productContainer = document.getElementById('product-container');
+    const products = Array.from(productContainer.children);
+
+    function filterProducts() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const category = categoryFilter.value;
+        const priceRange = priceFilter.value;
+
+        products.forEach(product => {
+            const title = product.querySelector('h1').textContent.toLowerCase();
+            const price = parseFloat(product.querySelector('p').textContent.replace('$', ''));
+            const productCategory = product.getAttribute('data-category') || 'all';
+
+            const matchesSearch = title.includes(searchTerm);
+            const matchesCategory = category === 'all' || productCategory === category;
+            let matchesPrice = true;
+
+            if (priceRange === 'under20') {
+                matchesPrice = price < 20;
+            } else if (priceRange === '20-50') {
+                matchesPrice = price >= 20 && price <= 50;
+            } else if (priceRange === 'over50') {
+                matchesPrice = price > 50;
+            }
+
+            product.style.display = matchesSearch && matchesCategory && matchesPrice ? 'block' : 'none';
+        });
+    }
+
+    searchInput.addEventListener('input', filterProducts);
+    categoryFilter.addEventListener('change', filterProducts);
+    priceFilter.addEventListener('change', filterProducts);
+</script>
+</html>
