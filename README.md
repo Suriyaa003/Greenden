@@ -47,4 +47,4 @@ By building Greenden, you will:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/greenden.git
+   git clone https://github.com/Suriyaa003/Greenden.git
